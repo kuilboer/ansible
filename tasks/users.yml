@@ -5,5 +5,8 @@
   copy: src=files/sudoers_ansible dest=/etc/sudoers.d/ansible owner=root group=root
 
 - name: set profile picture olaf
-  copy: src=files/olaf.icon dest=/var/lib/AccountsService/icons/olaf owner=root group=root mode=preserve
-  copy: src=files/olaf.conf dest=/var/lib/AccountsService/users/olaf owner=root group=root mode=preserve
+  copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=preserve
+  with_items:
+    - { src: 'files/olaf.icon', dest: '/var/lib/AccountsService/icons/olaf' }
+    - { src: 'files/olaf.conf', dest: '/var/lib/AccountsService/users/olaf' }
+
