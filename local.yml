@@ -4,6 +4,6 @@
   - name: Install htop
     apt: name={{items}}
     with_items:
-	- htop
-	- mc
-	- tmux
+      - htop
+      - mc
+      - tmux
