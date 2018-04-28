@@ -1,6 +1,12 @@
-- name: Install packages
-  apt: name={{item}}
+- name: Install apt packages
+  apt: name={{ item }}
   with_items:
     - htop
     - mc
     - tmux
+
+- name: Install snap packages
+  command: snap install {{ item }}
+  with_items:
+    - spotify
+    - tusk
