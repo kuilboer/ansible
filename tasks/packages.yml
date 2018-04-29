@@ -2,7 +2,6 @@
   apt: name={{ item }}
   with_items:
     - tlp
-    - dropbox
     - pinta
 
 - name: Install snap packages
