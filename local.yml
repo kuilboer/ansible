@@ -6,7 +6,7 @@
       changed_when: False
 
     - name: install prerequisite packages
-      package: "{{ item }}"
+      apt: "{{ item }}"
       state: present
       with_items: 
         - python-psutil
