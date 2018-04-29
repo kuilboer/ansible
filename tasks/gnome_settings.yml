@@ -1,4 +1,7 @@
 ---
 - name: Set 'PrtSc' key to make a snapshot of a selected screen area
-  command: "gsettings get org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip | grep \'Print\' >/dev/null 2>&1 || gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip 'Print'"
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/area-screenshot-clip"
+    value: "'Print'"
+    state: present
 
